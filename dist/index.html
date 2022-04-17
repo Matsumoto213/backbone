@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>webpack-Backbone</title>
+    <style>
+      .completed {
+        text-decoration: line-through;
+        color: cadetblue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Tasks</h1>
+    <form id="addtask">
+      <input type="text" id="title" />
+      <button type="submit">Add</button>
+      <span id="err"></span>
+    </form>
+    <div id="tasks"></div>
+    <div>
+      <p>残り<span id="count"></span></p>
+    </div>
+    <script type="text/template" id="task-template">
+      <input type="checkbox" class="toggle" <%= completed ? 'checked':'' %> >
+      <span class="<%= completed ? 'completed' : '' %>">
+        <%= title %>
+      </span>
+      <span class="delete">[X]</span>
+    </script>
+    <script src="app.js"></script>
+  </body>
+</html>
